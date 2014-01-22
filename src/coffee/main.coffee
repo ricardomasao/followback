@@ -1,4 +1,7 @@
-coffeeFolter = '/src/coffee/'
-home = require(coffeeFolter+'saveUser.js')
+module.exports = class Main
 
-home.init
+  constructor:(wrapper)->
+    @window = $(window)
+
+
+@main = new Main "body"

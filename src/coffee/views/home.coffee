@@ -1,4 +1,4 @@
-module.exports = () ->
+module.exports = class Home
 
-  @init =>
-    console.log "Init Home View"
+  constructor:(wrapper, scroller)->
+    console.log "init Home"
