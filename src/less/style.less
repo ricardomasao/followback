@@ -1,16 +1,27 @@
-body
-  background-color #f9f8f2
-html
-  -webkit-transform-origin: 0 0;
+@import "bootstrap/bootstrap.less";
 
-html, body
-  margin 0
-  padding 0
-  border 0
-  font-size 100%
-  font inherit
-  outline 0
-  position relative
-  font-smooth always
-  -webkit-font-smoothing antialiased
-  vertical-align baseline
+@body-bg: #f9f8f2;
+
+.logo-wrapper{
+  margin: 50px 0px 30px 0px;
+  text-align:center;
+}
+.introduction-wrapper{
+  margin: 0 50px 20px 50px;
+  text-align:center;
+  h1{
+    line-height:1.5;
+    font-size:14px;
+  }
+  h1 strong{
+    color:#056bab;
+  }
+}
+.login-wrapper{
+  text-align:center;
+
+  #login{
+    min-width:52px;
+    width:100%;
+  }
+}

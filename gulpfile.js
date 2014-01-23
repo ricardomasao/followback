@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var coffee = require('gulp-coffee');
 var less = require('gulp-less');
-var recess = require('gulp-recess');
 var path = require('path');
 var concat = require('gulp-concat');
 var browserify = require('gulp-browserify');
@@ -36,17 +35,8 @@ gulp.task('vendors', function() {
     .pipe(gulp.dest('public/js'))
 })
 
-//gulp.task('css', function() {
-  //gulp
-    //.src('src/less/**/*.less')
-    //.pipe(less())
-    //.pipe(concat('style.css'))
-    //.pipe(minifyCss())
-    //.pipe(gulp.dest('public/css'))
-//})
-
 gulp.task('less',function(){
-  gulp.src('src/less/style.less')
+  gulp.src('src/less/*.less')
     .pipe(less({
       paths: [ path.join('public/css', 'less', 'includes') ]
     }))
@@ -54,12 +44,12 @@ gulp.task('less',function(){
 })
 
 gulp.task('watch', function() {
-  gulp.src('src/coffee/**/*.coffee')
-        .pipe(watch(function(events, cb) {
-            gulp.run('js')
-            gulp.run('vendors')
-            gulp.run('less')
-        }))
+  gulp.src(['src/coffee/*.coffee','src/less/*.less'])
+    .pipe(watch(function(events, cb) {
+        gulp.run('js')
+        gulp.run('less')
+        gulp.run('watch')
+    }))
 })
 
 gulp.task('default', function() {

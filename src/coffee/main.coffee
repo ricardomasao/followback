@@ -1,7 +1,8 @@
 module.exports = class Main
 
-  constructor:(wrapper)->
+  constructor:()->
     @window = $(window)
+    console.log 'Main'
 
-
-@main = new Main "body"
+$(document).ready ->
+  @main = new Main
