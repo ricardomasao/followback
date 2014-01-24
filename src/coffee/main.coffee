@@ -1,8 +1,10 @@
+Login = require './ui/login.coffee'
+Instagram = require './api/instagram.coffee'
+
 module.exports = class Main
 
   constructor:()->
-    @window = $(window)
-    console.log 'Main'
+    @login = new Login
 
 $(document).ready ->
   @main = new Main

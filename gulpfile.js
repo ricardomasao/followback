@@ -44,7 +44,7 @@ gulp.task('less',function(){
 })
 
 gulp.task('watch', function() {
-  gulp.src(['src/coffee/*.coffee','src/less/*.less'])
+  gulp.src(['src/coffee/**/*.coffee','src/less/*.less'])
     .pipe(watch(function(events, cb) {
         gulp.run('js')
         gulp.run('less')
