@@ -6,5 +6,8 @@ module.exports = class Main
   constructor:()->
     @login = new Login
 
+  set_token:(token)->
+    @login.instagram.loged(token)
+
 $(document).ready ->
   @main = new Main

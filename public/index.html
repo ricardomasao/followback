@@ -15,6 +15,12 @@
     <script src="js/app_vendors.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
+    <script>
+      var _this = this;
+      function oAuthResult (token){
+        console.log($(document)[0].main.set_token(token));
+      }
+    </script>
 
     <div class="container">
       <div class="row logo-wrapper">
