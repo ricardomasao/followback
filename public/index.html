@@ -18,7 +18,7 @@
     <script>
       var _this = this;
       function oAuthResult (token){
-        console.log($(document)[0].main.set_token(token));
+        $(document)[0].main.set_token(token)
       }
     </script>
 
@@ -30,11 +30,14 @@
         <h1><strong>FollowBack</strong> is simply dummy text of the printing and typesetting industry.<br> Try it, and share with your friends! :)</h1>
       </div>
       <div class="row login-wrapper">
-        <div class="col-xs-5 col-md-5"></div>
-        <div class="col-xs-2 col-md-2">
-          <button id="login" type="button" class="btn btn-default btn-sm">Login</button>
+        <button id="login" type="button" class="btn btn-default btn-sm">Login</button>
+        <div class="btn-group btn-group-justified search-type center">
+          <!--<a class="btn btn-primary active">Following</a>-->
+          <a id="following" class="btn btn-default">Following</a>
+          <a id="followers" class="btn btn-default">Followers</a>
         </div>
-        <div class="col-xs-5 col-md-5"></div>
+      </div>
+      <div class="row list">
       </div>
     </div>
 

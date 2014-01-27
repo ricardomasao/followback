@@ -1998,7 +1998,7 @@ textarea.input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #333333;
+  color: #898989;
   text-decoration: none;
 }
 .btn:active,
@@ -2020,18 +2020,18 @@ fieldset[disabled] .btn {
   opacity: 1;
 }
 .btn-default {
-  color: #333333;
-  background-color: #ffffff;
-  border-color: #cccccc;
+  color: #898989;
+  background-color: #d3d3d3;
+  border-color: #bbbbbb;
 }
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333333;
-  background-color: #ebebeb;
-  border-color: #adadad;
+  color: #898989;
+  background-color: #bfbfbf;
+  border-color: #9c9c9c;
 }
 .btn-default:active,
 .btn-default.active,
@@ -2053,12 +2053,12 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #ffffff;
-  border-color: #cccccc;
+  background-color: #d3d3d3;
+  border-color: #bbbbbb;
 }
 .btn-default .badge {
-  color: #ffffff;
-  background-color: #333333;
+  color: #d3d3d3;
+  background-color: #898989;
 }
 .btn-primary {
   color: #ffffff;
@@ -5835,5 +5835,9 @@ h1 strong {
 }
 .login-wrapper #login {
   min-width: 52px;
-  width: 100%;
+  width: 15%;
+}
+.login-wrapper .search-type {
+  display: none;
+  width: 50%;
 }
