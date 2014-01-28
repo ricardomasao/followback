@@ -24,11 +24,11 @@ module.exports = class Instagram
         data: { access_token:@token },
         jsonp: "callback",
         jsonpCallback: "jsonpcallback",
-        success: @on_user_data,
+        success: @on_user_loged,
         error: @on_error
     })
 
-  on_user_data:(data)=>
+  on_user_loged:(data)=>
     @user_medias = data.data.counts.media
     @user_followers = data.data.counts.followed_by
     @user_follows = data.data.counts.follows
@@ -43,3 +43,52 @@ module.exports = class Instagram
 
   on_error:(jqXHR, textStatus, errorThrown)=>
     $(this).trigger 'onLoginError'
+
+  loadByType:(type)=>
+    @next_url = null
+    @array_data = []
+    @total_pages = 0
+
+    if @data_loader?
+        @data_loader.abort()
+
+    if type == 'following'
+        url = 'https://api.instagram.com/v1/users/'+@user_id+'/follows'
+    else
+        url = 'https://api.instagram.com/v1/users/'+@user_id+'/followed-by'
+
+    @load url
+
+  load:(url)=>
+    @data_loader = $.ajax({
+        method: "GET",
+        url: url,
+        dataType: "jsonp",
+        data: { access_token:@token },
+        jsonp: "callback",
+        jsonpCallback: "jsonpcallback",
+        success: @on_user_data,
+        error: @on_error
+    })
+
+  on_user_data:(data)=>
+    @next_url = data.pagination.next_url
+
+    currentData = data.data
+
+    @array_data.push currentData
+    @total_pages = @array_data.length
+
+    if @next_url isnt undefined or @next_url?
+        $(this).trigger 'partial_load_complete'
+        #@load @next_url
+        #console.log data.data
+    else
+        $(this).trigger 'load_complete'
+        #console.log 'Done!'
+
+    #i = 0
+    #len = currentData.length
+    #while i < len
+    #    @array_data.push currentData[i]
+    #    i++
