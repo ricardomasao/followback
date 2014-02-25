@@ -48,6 +48,7 @@ module.exports = class Instagram
     @next_url = null
     @array_data = []
     @total_pages = 0
+    @current_page = 0
 
     if @data_loader?
         @data_loader.abort()
@@ -81,6 +82,7 @@ module.exports = class Instagram
 
     if @next_url isnt undefined or @next_url?
         $(this).trigger 'partial_load_complete'
+        @current_page++
         #@load @next_url
         #console.log data.data
     else
