@@ -83,14 +83,13 @@ module.exports = class Instagram
     if @next_url isnt undefined or @next_url?
         $(this).trigger 'partial_load_complete'
         @current_page++
-        #@load @next_url
-        #console.log data.data
     else
         $(this).trigger 'load_complete'
-        #console.log 'Done!'
 
-    #i = 0
-    #len = currentData.length
-    #while i < len
-    #    @array_data.push currentData[i]
-    #    i++
+  get_relationship:(user_id)=>
+    #relationship = new Relationship @token
+    #$(relationship).on 'relationship_loaded', @_on_relationship_lodaded
+    #relationship.load user_id
+
+_on_relationship_lodaded:(id)=>
+    #console.log id

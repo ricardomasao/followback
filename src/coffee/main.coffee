@@ -2,6 +2,7 @@ Login = require './ui/login.coffee'
 Instagram = require './api/instagram.coffee'
 NavigationType = require './views/nav_type.coffee'
 TableManager = require './views/table_manager.coffee'
+#Relationship = require './api/helpers/relationships.coffee'
 
 module.exports = class Main
 

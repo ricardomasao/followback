@@ -27,6 +27,7 @@ gulp.task('vendors', function() {
   gulp
     .src('src/vendors/**/*.js')
     .pipe(browserify({
+          transform : ['coffeeify'],
           insertGlobals : true,
           debug : true
         }))
@@ -53,8 +54,8 @@ gulp.task('watch', function() {
 })
 
 gulp.task('default', function() {
-  gulp.run('vendors')
   gulp.run('js');
+  gulp.run('vendors');
   gulp.run('less');
   gulp.run('watch');
 })

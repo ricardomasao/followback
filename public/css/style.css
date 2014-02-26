@@ -6057,6 +6057,7 @@ h1 strong {
 }
 .logo-wrapper {
   margin: 50px 0px 30px 0px;
+  opacity: 0;
   text-align: center;
 }
 .introduction-wrapper {
@@ -6118,6 +6119,28 @@ h1 strong {
 .container .row.list .item .texto p span {
   display: block;
   top: -50%;
+}
+.container .row.list .item .container-button {
+  display: table;
+  position: relative;
+  font-family: Signika Negative;
+  font-weight: 400;
+}
+.container .row.list .item .container-button strong {
+  font-weight: 700;
+}
+.container .row.list .item .container-button span.bt {
+  top: 50%;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.container .row.list .item .container-button span.bt button {
+  display: inline-block;
+  max-width: 140px;
+  min-width: 110px;
+  top: -50%;
+  width: 100%;
 }
 .container .row.list .item div {
   height: 100%;
