@@ -1,13 +1,15 @@
 module.exports = class Login
 
-  constructor:()->
+  instagram:null
+
+  constructor:(instagram)->
+    @instagram = instagram
     @setup()
 
   setup:()->
     @login_button = $('.login-wrapper #login')
 
     @login_button.bind 'click', @on_login_click
-    @instagram = new Instagram
     $(@instagram).bind 'onLoginSuccess', @on_login_success
     $(@instagram).bind 'onLoginError', @on_login_error
 

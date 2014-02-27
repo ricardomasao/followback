@@ -3,7 +3,7 @@ module.exports = class Instagram
   @token = '';
 
   constructor:()->
-    console.log 'Instagram()'
+    console.log 'New Instagram()'
 
   start:()->
     url = 'https://instagram.com/oauth/authorize/?client_id=07afc136d1d94461bec600cd7ea5e515&redirect_uri=http://local.followback/oauth.html&response_type=token&scope=basic+relationships'

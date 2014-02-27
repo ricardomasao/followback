@@ -1,15 +1,16 @@
-#Login = require './ui/login.coffee'
-#Instagram = require './api/instagram.coffee'
-#NavigationType = require './views/nav_type.coffee'
-#TableManager = require './views/table_manager.coffee'
-#Relationship = require './api/helpers/relationships.coffee'
+Login = require './ui/login.coffee'
+Instagram = require './api/instagram.coffee'
+NavigationType = require './views/nav_type.coffee'
+TableManager = require './views/table_manager.coffee'
+Relationship = require './api/helpers/relationships.coffee'
 
 module.exports = class Main
 
   constructor:()->
     @social_name = 'instagram'
     @container_list = $ '.container .list'
-    @login = new Login
+    @instagram = new Instagram
+    @login = new Login @instagram
     @navigation_type = new NavigationType $('.login-wrapper .search-type')
     @table_manager = new TableManager @container_list
     $(@login).bind 'onLoginSuccess', @on_login_success
