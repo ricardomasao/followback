@@ -3,7 +3,7 @@ module.exports = class Instagram
   @token = '';
 
   constructor:()->
-    console.log 'New Instagram()'
+    #console.log 'New Instagram()'
 
   start:()->
     url = 'https://instagram.com/oauth/authorize/?client_id=07afc136d1d94461bec600cd7ea5e515&redirect_uri=http://local.followback/oauth.html&response_type=token&scope=basic+relationships'
@@ -91,5 +91,5 @@ module.exports = class Instagram
     #$(relationship).on 'relationship_loaded', @_on_relationship_lodaded
     #relationship.load user_id
 
-_on_relationship_lodaded:(id)=>
+  _on_relationship_lodaded:(id)=>
     #console.log id

@@ -6083,65 +6083,70 @@ h1 strong {
   height: 50px;
   margin-top: 25px;
 }
-.container .row.list .item:first-child {
+.container .row.list a:nth-child(2n+0) .item {
+  background-color: #f6f4ec;
+}
+.container .row.list a .item:first-child {
   margin-top: 0px;
 }
-.container .row.list .item:nth-child(2n+0) {
-  background-color: #f9f8f2;
-}
-.container .row.list .item {
+.container .row.list a .item {
   background-color: #f0eee5;
   border-radius: 5px;
   height: 100%;
   margin-top: 10px;
   padding: 5px;
 }
-.container .row.list .item .media {
+.container .row.list a .item .media {
   text-align: center;
 }
-.container .row.list .item .media a {
-  height: 100%;
-}
-.container .row.list .item .media a img {
+.container .row.list a .item .media img {
   border-radius: 50%;
   display: inline-block;
   height: 100%;
 }
-.container .row.list .item .texto {
+.container .row.list a .item .texto {
   display: table;
   position: relative;
 }
-.container .row.list .item .texto p {
+.container .row.list a .item .texto p {
+  font-family: Signika Negative;
   top: 50%;
   display: table-cell;
   vertical-align: middle;
 }
-.container .row.list .item .texto p span {
+.container .row.list a .item .texto p span {
   display: block;
   top: -50%;
 }
-.container .row.list .item .container-button {
+.container .row.list a .item .texto p span strong {
+  font-family: 'Kite One', sans-serif;
+  color: #7a7a7a;
+  font-size: 10px;
+  font-style: italic;
+  margin-left: 10px;
+}
+.container .row.list a .item .container-button {
   display: table;
   position: relative;
   font-family: Signika Negative;
   font-weight: 400;
 }
-.container .row.list .item .container-button strong {
+.container .row.list a .item .container-button strong {
   font-weight: 700;
 }
-.container .row.list .item .container-button span.bt {
+.container .row.list a .item .container-button span.bt {
   top: 50%;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
-.container .row.list .item .container-button span.bt button {
+.container .row.list a .item .container-button span.bt button {
   display: inline-block;
   max-width: 140px;
   min-width: 110px;
   top: -50%;
   width: 100%;
 }
-.container .row.list .item div {
+.container .row.list a .item div {
   height: 100%;
 }

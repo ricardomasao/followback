@@ -2,6 +2,7 @@ Login = require './ui/login.coffee'
 Instagram = require './api/instagram.coffee'
 NavigationType = require './views/nav_type.coffee'
 TableManager = require './views/table_manager.coffee'
+TableCell = require './views/table_cell.coffee'
 Relationship = require './api/helpers/relationships.coffee'
 
 module.exports = class Main
@@ -12,7 +13,7 @@ module.exports = class Main
     @instagram = new Instagram
     @login = new Login @instagram
     @navigation_type = new NavigationType $('.login-wrapper .search-type')
-    @table_manager = new TableManager @container_list
+    @table_manager = new TableManager @container_list,@social_name,TableCell
     $(@login).bind 'onLoginSuccess', @on_login_success
     $(@navigation_type).bind 'onTypeUpdate', @on_type_update
 

@@ -6,14 +6,18 @@ module.exports = class NavigationType
   show:()=>
     TweenLite.set @wrapper,{display:'inline-block', opacity:0}
     TweenLite.to @wrapper, .5, { opacity:1, ease:Expo.easeOut, onComplete: =>
-      if @current_type?
-        @update()
-      else
-        @current_type = 'following'
-        @update()
+      @init()
     }
 
+  init:()=>
+    if @current_type?
+      @update()
+    else
+      @current_type = 'following'
+      @update()
+
     @wrapper.find('.btn').bind 'click', @on_type_click
+    $(@wrapper.find('.btn')[0]).trigger 'click'
 
   update:()=>
     @change_button_status()
@@ -32,7 +36,6 @@ module.exports = class NavigationType
       i++
 
   on_type_click:(e)=>
-    if !$(e.currentTarget).hasClass 'disable'
-      @current_type = $(e.currentTarget).attr 'id'
-      $(this).trigger 'onTypeUpdate'
-      @update()
+    @current_type = $(e.currentTarget).attr 'id'
+    $(this).trigger 'onTypeUpdate'
+    @update()

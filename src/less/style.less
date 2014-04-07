@@ -213,69 +213,80 @@ h1{
     height:50px;
     margin-top: 25px;
 
-    .item:first-child{
-      margin-top: 0px;
+    a:nth-child(2n+0){
+      .item{
+        background-color:#f6f4ec;
+      }
     }
-    .item:nth-child(2n+0){
-      background-color:@body-bg;
-    }
-    .item{
-      background-color:@body-secundary-bg;
-      border-radius: 5px;
-      height:100%;
-      margin-top: 10px;
-      padding:5px;
+    a
+    {
+      .item:first-child{
+        margin-top: 0px;
+      }
+      .item{
+        background-color:@body-secundary-bg;
+        border-radius: 5px;
+        height:100%;
+        margin-top: 10px;
+        padding:5px;
 
-      .media{
-        text-align: center;
-        a{
-          height: 100%;
+        .media{
+          text-align: center;
           img{
             border-radius: 50%;
             display:inline-block;
             height:100%;
           }
         }
-      }
-      .texto{
-        display:table;
-        position: relative;
+        .texto{
+          display:table;
+          position: relative;
 
-        p{
-          top: 50%;
-          display: table-cell;
-          vertical-align: middle;
-          span{
-            display:block;
-            top: -50%;
+          p{
+            font-family: Signika Negative;
+            top: 50%;
+            display: table-cell;
+            vertical-align: middle;
+            span{
+              display:block;
+              top: -50%;
+              strong
+              {
+                font-family:'Kite One', sans-serif;
+                color:#7a7a7a;
+                font-size:10px;
+                font-style: italic;
+                margin-left:10px;
+              }
+            }
           }
         }
-      }
-      .container-button{
-        display:table;
-        position: relative;
-        font-family: Signika Negative;
-        font-weight: 400;
-        strong{
-          font-weight: 700;
-        }
-        span.bt{
-          top: 50%;
-          display: table-cell;
-          text-align: center;
-          vertical-align: middle;
-          button{
-            display: inline-block;
-            max-width: 140px;
-            min-width: 110px;
-            top: -50%;
-            width: 100%;
+        .container-button{
+          display:table;
+          position: relative;
+          font-family: Signika Negative;
+          font-weight: 400;
+          strong{
+            font-weight: 700;
+          }
+          span.bt{
+            top: 50%;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            button{
+              display: inline-block;
+              max-width: 140px;
+              min-width: 110px;
+              top: -50%;
+              width: 100%;
+            }
           }
         }
-      }
 
-      div{
-        height:100%;
+        div{
+          height:100%;
+        }
       }
     }
   }
